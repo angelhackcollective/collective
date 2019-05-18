@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import Button from '../styledComponents/Button';
-import Input from '../styledComponents/Input';
+import { TextInput } from '../styledComponents/Inputs';
 import axios from 'axios';
 
 class Login extends Component {
@@ -58,12 +58,14 @@ class Login extends Component {
     const { username, password } = this.state;
     return (
       <form onSubmit={this.handleSubmit}>
-        <Input
+        <TextInput
           type="text"
-          name="TEST"
-          placeholder="tst test"
+          name="username"
+          for="username"
+          placeholder="Username"
           value={username}
-          label="this is the label"
+          label="Username"
+          onChange={this.handleChange}
         />
         <input
           type="text"

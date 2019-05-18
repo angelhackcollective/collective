@@ -28,7 +28,7 @@ const InputWrapper = styled.div`
   max-width: 270px;
 `;
 
-const Input = ({label, name, ...rest}) => {
+const TextInput = ({label, name, ...rest}) => {
   return (
     <InputWrapper>
       <Label for={name}>{label}</Label>
@@ -37,7 +37,7 @@ const Input = ({label, name, ...rest}) => {
   )
 };
 
-export default Input;
+export { TextInput };
 
 
 
