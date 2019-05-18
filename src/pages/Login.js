@@ -1,6 +1,7 @@
-import React, { Component } from "react";
-import { withRouter } from "react-router-dom";
-import axios from "axios";
+import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
+import Button from '../styledComponents/Button';
+import axios from 'axios';
 
 class Login extends Component {
   constructor(props) {
@@ -70,7 +71,7 @@ class Login extends Component {
           value={password}
           onChange={this.handleChange}
         />
-        <button type="submit">Login</button>
+        <Button type="submit">Login</Button>
       </form>
     );
   }
