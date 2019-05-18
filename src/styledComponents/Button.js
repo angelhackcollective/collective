@@ -1,16 +1,13 @@
 import styled from 'styled-components';
-import { theme, media } from './index';
+import { colors, media } from './index';
 
 const defaultButtonStyle = inverted => `
-  border: none;
   display: inline-block;
-  width: 270px;
   font-size: 0.875rem;
   font-weight: bold;
   font-family: 'lato';
-  color: ${inverted ? theme.colors.blue : theme.colors.white};
-  background-color: ${inverted ? theme.colors.white : theme.colors.blue};
-  box-shadow: 0px 0px 0px 1px ${inverted ? theme.colors.white : theme.colors.blue};
+  color: ${inverted ? colors.blue : colors.white};
+  background-color: ${inverted ? colors.white : colors.blue};
   border-radius: 2px;
   cursor: pointer;
   transition: background-color .5s ease, color .5s ease, box-shadow 0.3s ease 0s, border-color .3s ease 0s;;
@@ -18,6 +15,7 @@ const defaultButtonStyle = inverted => `
   padding-bottom: 11px;
   padding-right: 28px;
   padding-left: 28px;
+  max-width: 270px;
 
   :disabled, &.disabled {
     background-color: #d6d5d4;
@@ -25,10 +23,10 @@ const defaultButtonStyle = inverted => `
   }
 
   :hover {
-    background-color: ${inverted ? theme.colors.blue : theme.colors.white};
-    color: ${inverted ? theme.colors.white : theme.colors.blue};
-    box-shadow: 0px 0px 0px 2px ${inverted ? theme.colors.white : theme.colors.blue};
-    border-color: ${inverted ? theme.colors.white : theme.colors.blue};
+    background-color: ${inverted ? colors.blue : colors.white};
+    color: ${inverted ? colors.white : colors.blue};
+    box-shadow: 0px 0px 0px 2px ${inverted ? colors.white : colors.blue};
+    border-color: ${inverted ? colors.white : colors.blue};
     transition: background-color .5s ease 0s, color .5s ease 0s, box-shadow 0.3s ease 0s, border-color .3s ease 0s;
 
   }
@@ -43,15 +41,15 @@ const Button = styled.button`
 
 const OutlinedButton = styled(Button)`
   background-color: transparent;
-  color: ${theme.colors.blue};
+  color: ${colors.blue};
   min-width: 270px;
-  box-shadow: 0px 0px 0px 1px ${theme.colors.blue};
+  box-shadow: 0px 0px 0px 1px ${colors.blue};
   transition: box-shadow 0.3s ease 0s, border-color .3s ease 0s;
   :hover {
     background: transparent;
-    color: ${theme.colors.white};
-    box-shadow: 0px 0px 0px 3px ${theme.colors.blue};
-    border-color: ${theme.colors.blue};
+    color: ${colors.white};
+    box-shadow: 0px 0px 0px 3px ${colors.blue};
+    border-color: ${colors.blue};
     transition: box-shadow 0.3s ease 0s, border-color .3s ease 0s;
   }
 `;

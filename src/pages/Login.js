@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import Button from '../styledComponents/Button';
+import Input from '../styledComponents/Input';
 import axios from 'axios';
 
 class Login extends Component {
@@ -57,6 +58,13 @@ class Login extends Component {
     const { username, password } = this.state;
     return (
       <form onSubmit={this.handleSubmit}>
+        <Input
+          type="text"
+          name="TEST"
+          placeholder="tst test"
+          value={username}
+          label="this is the label"
+        />
         <input
           type="text"
           name="username"
@@ -71,6 +79,7 @@ class Login extends Component {
           value={password}
           onChange={this.handleChange}
         />
+
         <Button type="submit">Login</Button>
       </form>
     );
