@@ -31,7 +31,7 @@ const InputWrapper = styled.div`
 const TextInput = ({label, name, ...rest}) => {
   return (
     <InputWrapper>
-      <Label for={name}>{label}</Label>
+      <Label htmlFor={name}>{label}</Label>
       <StyledInput name={name} {...rest} />
     </InputWrapper>
   )

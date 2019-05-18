@@ -61,7 +61,6 @@ class Login extends Component {
         <TextInput
           type="text"
           name="username"
-          for="username"
           placeholder="Username"
           value={username}
           label="Username"
