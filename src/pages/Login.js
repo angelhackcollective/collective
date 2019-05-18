@@ -1,47 +1,79 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
+import axios from "axios";
 
 class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: '',
-      pw: '',
-    }
-    this.handleSubmit = this.handleSubmit.bind(this);
+      username: "",
+      password: ""
+    };
     this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleSubmit(){
-
+  handleChange(e) {
+    e.preventDefault();
+    const { value, name } = e.target;
+    this.setState({
+      [name]: value
+    });
   }
-  
-  handleChange(e){
-    // console.log(e.target)
-    this.setState = {
 
+  handleSubmit(e) {
+    e.preventDefault();
+    const { username, password } = this.state;
+    const { history } = this.props;
+
+    if (!username) {
+      alert("Please include a username to login");
+    }
+
+    if (!password) {
+      alert("Please include a password to submit");
+    }
+
+    // const res = await axios.put("/api/auth/login", { username, password });
+
+    try {
+      // eslint-disable-next-line no-undef
+      localStorage.setItem("token", username);
+      localStorage.setItem("username", username);
+
+      this.setState({
+        username: "",
+        password: ""
+      });
+
+      history.push("/");
+    } catch (err) {
+      console.error(err);
     }
   }
-
 
   render() {
+    const { username, password } = this.state;
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-        <label>
-          Name:
-          <input type="text" value={this.state.value} onChange={this.handleChange} />
-        </label>
-        <label>
-          Password:
-          <input type="text" value={this.state.value} onChange={this.handleChange} />
-        </label>
-
-        <input type="submit" value="Signin" />
-        Don't have an account? <a href='/Signup' onClick={this.handleClick}> Sign up here! </a>
+      <form onSubmit={this.handleSubmit}>
+        <input
+          type="text"
+          name="username"
+          placeholder="Username"
+          value={username}
+          onChange={this.handleChange}
+        />
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          value={password}
+          onChange={this.handleChange}
+        />
+        <button type="submit">Login</button>
       </form>
-      </div>
     );
   }
 }
 
-export default Login;
+export default withRouter(Login);
