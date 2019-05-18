@@ -10,11 +10,11 @@ function App() {
   return (
     <Fragment>
       <Navbar />
-        <Switch>
-          <AuthRoute exact path="/" component={BrowseList} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/signup" component={Signup} />
-        </Switch>
+      <Switch>
+        <AuthRoute exact path="/" component={BrowseList} />
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/signup" component={Signup} />
+      </Switch>
     </Fragment>
   );
 }
