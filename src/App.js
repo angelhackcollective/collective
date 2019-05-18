@@ -1,13 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import React, { Fragment } from 'react';
+import { Switch, Route } from "react-router-dom";
+import Login from './pages/Login';
+import Signup from './pages/Signup';
+import BrowseList from './pages/BrowseList';
+import Navbar from './components/Navbar';
+import AuthRoute from './components/AuthRoute';
 
 function App() {
   return (
-    <div className="App">
-      App
-    </div>
+    <Fragment>
+      <Navbar />
+      <Switch>
+        <AuthRoute exact path="/" component={BrowseList} />
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/signup" component={Signup} />
+      </Switch>
+    </Fragment>
   );
 }
 
