@@ -1,6 +1,8 @@
-import React, { Component } from "react";
-import { withRouter } from "react-router-dom";
-import axios from "axios";
+import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
+import Button from '../styledComponents/Button';
+import { TextInput } from '../styledComponents/Inputs';
+import axios from 'axios';
 
 class Login extends Component {
   constructor(props) {
@@ -56,6 +58,14 @@ class Login extends Component {
     const { username, password } = this.state;
     return (
       <form onSubmit={this.handleSubmit}>
+        <TextInput
+          type="text"
+          name="username"
+          placeholder="Username"
+          value={username}
+          label="Username"
+          onChange={this.handleChange}
+        />
         <input
           type="text"
           name="username"
@@ -70,7 +80,8 @@ class Login extends Component {
           value={password}
           onChange={this.handleChange}
         />
-        <button type="submit">Login</button>
+
+        <Button type="submit">Login</Button>
       </form>
     );
   }
