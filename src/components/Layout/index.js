@@ -1,7 +1,7 @@
 import React from "react";
 import Section from '../../styledComponents/Section';
 import Container from '../../styledComponents/Container';
-import HomePage from './HomePage';
+import WithBackground from './WithBackground';
 import { Route } from "react-router-dom";
 
 const DefaultLayout = ({ component: Component, ...rest }) => (
@@ -18,4 +18,4 @@ const DefaultLayout = ({ component: Component, ...rest }) => (
 );
 
 export default DefaultLayout;
-export { HomePage };
+export { WithBackground };

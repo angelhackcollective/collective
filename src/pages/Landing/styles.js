@@ -1,16 +1,6 @@
 import styled from 'styled-components';
 import Button from '../../styledComponents/Button';
 
-const Wrapper = styled.div`
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  background-image: url('${props => props.src}');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: unset;
-`;
-
 const Hero = styled.div`
   padding-top: 148px;
   margin: 0 auto;
@@ -47,7 +37,6 @@ const Btn = styled(Button)`
 
 
 export {
-  Wrapper,
   Hero,
   Btn,
 };

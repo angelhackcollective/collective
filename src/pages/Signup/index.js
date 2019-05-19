@@ -9,6 +9,7 @@ import Step from '@material-ui/core/Step';
 import StepLabel from '@material-ui/core/StepLabel';
 import { CustomContainer } from './styles';
 import { withRouter } from 'react-router-dom';
+import Section from '../../styledComponents/Section';
 
 const styles = theme => ({
   root: {
@@ -83,6 +84,7 @@ class Signup extends React.Component {
     const ComponentStep = components[activeStep]
     const steps = getSteps()
     return (
+      <Section style={{background: "transparent"}}>
       <CustomContainer>
         { activeStep >= 1 && (
           <Stepper activeStep={activeStep}>
@@ -101,6 +103,7 @@ class Signup extends React.Component {
           { React.createElement(ComponentStep, {next: this.handleNext}, null) }
         </Fragment>
       </CustomContainer>
+      </Section>
     )
   }
 };
