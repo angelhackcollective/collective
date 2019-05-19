@@ -1,10 +1,16 @@
 import React from 'react';
+import Symptoms from '../../components/Symptoms';
 
-const MedicationView = (props) => {
-  console.log("TODO", "set up medication view", props)
+const MedicationView = ({history}) => {
+  console.log("TODO", "set up medication view", history)
+  const { medication } = history.location.state
+  console.log(medication)
   return (
     <div>
-      A single medication
+      <h1>{medication.name}</h1>
+      <Symptoms
+        {...medication}
+      />
     </div>
   )
 };
