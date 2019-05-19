@@ -1,8 +1,7 @@
 import axios from "axios";
 import React, { Component, Fragment } from "react";
-import { NavLink, withRouter } from "react-router-dom";
-// import "./navbar.css";
-import { NavContainer } from '../../styledComponents/NavContainer';
+import { withRouter } from "react-router-dom";
+import { NavContainer, Link, LinkContainer } from '../../styledComponents/NavContainer';
 
 class Navbar extends Component {
   constructor(props) {
@@ -29,10 +28,9 @@ class Navbar extends Component {
       <div id="navbar">
       <NavContainer>
         <h3>
-          <NavLink to="/">Home </NavLink>
-          {localStorage.username && localStorage.username}
+          co<span>llective</span>
         </h3>
-        <ul>
+        <div>
           {localStorage.token ? (
             <li className="navbar-links">
               <button type="button" onClick={this.logout}>
@@ -40,16 +38,12 @@ class Navbar extends Component {
               </button>
             </li>
           ) : (
-            <Fragment>
-              <li className="navbar-links">
-                <NavLink to="/login">Login</NavLink>
-              </li>
-              <li className="navbar-links">
-                <NavLink to="/signup">Register</NavLink>
-              </li>
-            </Fragment>
+            <LinkContainer>
+                <Link to="/signup">Sign Up/</Link>
+                <Link to="/login">Login</Link>
+            </LinkContainer>
           )}
-        </ul>
+        </div>
         </NavContainer>
       </div>
     );
