@@ -2,7 +2,7 @@ import { css } from 'styled-components';
 
 const sizes = {
   tablet: 768,
-  desktop: 1080,
+  desktop: 1280,
 }
 
 const colors = {
@@ -12,6 +12,7 @@ const colors = {
   lightGrey: '#EAEBEB',
   lineColor: '#EAEBEB',
   white: '#ffffff',
+  background: '#fafafafa',
   logoRed: '#c72d4d',
   red: '#a91735',
 }

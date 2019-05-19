@@ -1,13 +1,27 @@
 import styled from 'styled-components';
 import React from 'react';
+import Caret from '../components/Icons/Caret';
 import { colors } from './index';
 
-const StyledInput = styled.input`
+const defaultInputStyles = () => `
+  -webkit-appearance: none;
   height: 40px;
   background-color: ${colors.white};
   border-radius: 2px;
   border: solid 1px ${colors.blue};
   font-size: 14px;
+  box-shadow: none;
+  cursor: pointer;
+  width: 100%;
+
+  :focus {
+    outline: none;
+    box-shadow: inset 0 -1px 0 0 ${colors.blue};
+  }
+`;
+
+const StyledInput = styled.input`
+  ${() => defaultInputStyles()}
 `;
 
 const Label = styled.label`
@@ -28,7 +42,40 @@ const InputWrapper = styled.div`
   max-width: 270px;
 `;
 
-const TextInput = ({label, name, ...rest}) => {
+const SelectInput = styled.select`
+  ${() => defaultInputStyles()}
+  background: none;
+  :focus {
+    outline: none;
+    box-shadow: none;
+  }
+`;
+
+const TextArea = styled.textarea`
+  ${() => defaultInputStyles()}
+
+  border: 1px solid ${colors.blue};
+  cols: ${props => props.cols ? props.cols : undefined};
+  rows: ${props => props.rows ? props.rows : undefined};
+`;
+
+const SelectContainer = styled.div`
+  position: relative;
+  width: 100%;
+  margin-bottom: 1.5rem;
+
+  select {
+    margin-bottom: 0;
+  }
+
+  svg {
+    position: absolute;
+    right: 0;
+    transform: rotate(180deg);
+  }
+`;
+
+const Input = ({label, name, ...rest}) => {
   return (
     <InputWrapper>
       <Label htmlFor={name}>{label}</Label>
@@ -37,7 +84,21 @@ const TextInput = ({label, name, ...rest}) => {
   )
 };
 
-export { TextInput };
+const Select = ({ children, value, name, onChange, className }) => (
+  <SelectContainer className={className}>
+    <Caret
+      fill={colors.blue}
+      stroke={colors.blue}
+      width="10px"
+      height="100%"
+    />
+    <SelectInput name={name} value={value} onChange={onChange}>
+      {children}
+    </SelectInput>
+  </SelectContainer>
+);
+
+export { Input, Select, TextArea };
 
 
 
