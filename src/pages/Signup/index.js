@@ -9,13 +9,10 @@ import Step from '@material-ui/core/Step';
 import StepLabel from '@material-ui/core/StepLabel';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import Section from '../../styledComponents/Section';
-import Container from '../../styledComponents/Container';
+import { CustomContainer } from './styles';
 import styled from 'styled-components';
-
-const CustomContainer = styled(Container)`
-  max-width: 550px;
-`;
+import { withRouter } from 'react-router-dom';
+import axios from 'axios';
 
 const styles = theme => ({
   root: {
@@ -50,19 +47,40 @@ class Signup extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeStep: 2,
+      activeStep: 3,
       patientData: {},
+      api: "https://hackathon-the-collective.herokuapp.com/api/v1/signup"
     };
     this.handleNext = this.handleNext.bind(this);
+    this.signUp = this.signUp.bind(this);
   }
 
   handleNext(data) {
     const { activeStep } = this.state;
-    console.log(data)
-    this.setState((state) => ({
-      patientData: {...state.patientData, ...data},
-      activeStep: state.activeStep + 1,
-    }))
+    if (activeStep === 3) {
+      this.setState((state) => ({
+        patientData: {...state.patientData, ...data}
+      }))
+      this.signUp()
+    } else {
+      this.setState((state) => ({
+        patientData: {...state.patientData, ...data},
+        activeStep: state.activeStep + 1,
+      }))
+      return
+    }
+  }
+
+  async signUp() {
+    const { url, patientData } = this.state
+    const res = await axios.post(url, patientData).catch(err => {
+      console.log("ERROR")
+      console.log(err)
+    })
+    console.log(res)
+    localStorage.setItem("token", patientData.username);
+    localStorage.setItem("username", patientData.username);
+    this.props.history.push("/")
   }
 
   render() {
@@ -71,36 +89,26 @@ class Signup extends React.Component {
     const steps = getSteps()
     const { classes } = this.props
     return (
-        <Section>
-          <CustomContainer>
-            <Stepper activeStep={activeStep}>
-              {steps.map((label, index) => {
-                const props = {};
-                const labelProps = {};
-                return (
-                  <Step key={label} {...props}>
-                    <StepLabel {...labelProps}>{label}</StepLabel>
-                  </Step>
-                );
-              })}
-            </Stepper>
-            <div>
-              {activeStep === steps.length ? (
-                <div>
-                  <Typography className={classes.instructions}>
-                    All steps completed - you&apos;re finished
-                  </Typography>
-                </div>
-              ) : (
-                <div>
-                    { React.createElement(ComponentStep, {next: this.handleNext}, null)}
-                </div>
-              )}
-            </div>
-          </CustomContainer>
-      </Section>
+      <CustomContainer>
+        { activeStep >= 1 && (
+          <Stepper activeStep={activeStep}>
+            {steps.map((label, index) => {
+              const props = {};
+              const labelProps = {};
+              return (
+                <Step key={label} {...props}>
+                  <StepLabel {...labelProps}>{label}</StepLabel>
+                </Step>
+              );
+            })}
+          </Stepper>
+        )}
+        <Fragment>
+          { React.createElement(ComponentStep, {next: this.handleNext}, null) }
+        </Fragment>
+      </CustomContainer>
     )
   }
 };
 
-export default withStyles(styles)(Signup);
+export default withStyles(styles)(withRouter(Signup));

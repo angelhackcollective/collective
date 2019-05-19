@@ -2,7 +2,7 @@
 import React, { Component } from "react";
 import { Input, Select, Label } from '../../styledComponents/Inputs';
 import Button from '../../styledComponents/Button';
-import { Form, Header, FormWrapper } from './styles';
+import { Form, Header, HeaderWrapper, FormWrapper, Pill, PillWrapper } from './styles';
 import SelectSearch from 'react-select-search'
 import './select.css';
 
@@ -70,9 +70,11 @@ class MedicalHistory extends Component {
     console.log(this.state)
     return (
       <FormWrapper>
-        <Header>Provide your medical history</Header>
-        <p>Colletive securely stores this information. This will not be visible to any other users.</p>
-      <Form>
+        <HeaderWrapper>
+          <Header>Provide your medical history</Header>
+          <p>Colletive securely stores this information. This will not be visible to any other users.</p>
+        </HeaderWrapper>
+      <Form onSubmit={this.handleSubmit}>
         <div>
           <Label>List any current health issues</Label>
           <SelectSearch
@@ -82,24 +84,24 @@ class MedicalHistory extends Component {
             name="conditions"
             placeholder="Type to search for health issues"
           />
-          <div>
+          <PillWrapper>
             {
               conditions.map(({name}) => (
-                <p key={name}>{name}</p>
+                <Pill key={name}>{name}</Pill>
               ))
             }
-          </div>
+          </PillWrapper>
         </div>
         <div>
           <Label>List your current medications</Label>
           <SelectSearch options={medicationOptions} value="" name="medications" placeholder="Type to search for medications" />
-          <div>
+          <PillWrapper>
             {
               medications.map(({name}) => (
-                <p key={name}>{name}</p>
+                <Pill key={name}>{name}</Pill>
               ))
             }
-          </div>
+          </PillWrapper>
         </div>
         <Input
           type="number"
@@ -122,7 +124,7 @@ class MedicalHistory extends Component {
           value={abortions}
           onChange={this.handleChange}
         />
-        <Button type="submit" onClick={() => this.handleSubmit}>Submit</Button>
+        <Button type="submit">Submit</Button>
       </Form>
       </FormWrapper>
     );

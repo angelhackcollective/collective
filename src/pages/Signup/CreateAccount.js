@@ -1,9 +1,9 @@
 /* eslint-disable react/forbid-prop-types */
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { withRouter } from "react-router-dom";
 import { Input } from '../../styledComponents/Inputs';
 import Button from '../../styledComponents/Button';
-import { Form, FormWrapper } from './styles';
+import { Form, FormWrapper, CreateAccountHeader } from './styles';
 import axios from "axios";
 
 class CreateAccount extends Component {
@@ -12,6 +12,7 @@ class CreateAccount extends Component {
     this.state = {
       username: "",
       password: "",
+      passwordConf: "",
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -28,8 +29,7 @@ class CreateAccount extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const { username, password } = this.state;
-    const { history } = this.props;
+    const { username, password, passwordConf } = this.state;
     // username and password validation
     // if (!username) {
     //   alert("Username cannot be blank");
@@ -67,6 +67,11 @@ class CreateAccount extends Component {
   render() {
     const { username, password, passwordConf } = this.state;
     return (
+      <Fragment>
+      <CreateAccountHeader>
+        <h1>Find the right birth control solution for <em>you</em></h1>
+        <p>Reported symptoms are from women— just like you.</p>
+      </CreateAccountHeader>
       <FormWrapper>
       <Form onSubmit={this.handleSubmit}>
         <Input
@@ -80,14 +85,21 @@ class CreateAccount extends Component {
         <Input
           type="password"
           name="password"
-          label="Password"
-          placeholder="Password"
+          label="Create Password"
           value={password}
           onChange={this.handleChange}
         />
-        <Button type="submit">Submit</Button>
+        <Input
+          type="password"
+          name="passwordConf"
+          label="Re-Enter Password"
+          value={passwordConf}
+          onChange={this.handleChange}
+        />
+        <Button type="submit">Create Account</Button>
       </Form>
       </FormWrapper>
+      </Fragment>
     );
   }
 }

@@ -5,6 +5,8 @@ import Signup from './pages/Signup';
 import BrowseList from './pages/BrowseList';
 import Navbar from './components/Navbar';
 import AuthRoute from './components/AuthRoute';
+import Section from './styledComponents/Section';
+import Container from './styledComponents/Container';
 import { Header } from './styledComponents/Header';
 import { NavContainer } from './styledComponents/NavContainer';
 
@@ -12,11 +14,15 @@ function App() {
   return (
     <Fragment>
       <Navbar />
-      <Switch>
-        <AuthRoute exact path="/" component={BrowseList} />
-        <Route exact path="/signup" component={Signup} />
-        <Route exact path="/login" component={Login} />
-      </Switch>
+      <Section dark>
+        <Container>
+          <Switch>
+            <AuthRoute exact path="/" component={BrowseList} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/signup" component={Signup} />
+          </Switch>
+        </Container>
+      </Section>
     </Fragment>
   );
 }

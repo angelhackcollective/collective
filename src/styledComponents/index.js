@@ -9,7 +9,7 @@ const colors = {
   blue: '#031e46',
   midGrey: '#979797',
   darkGrey: '#333333',
-  lightGrey: '#EAEBEB',
+  lightGrey: '#fafafafa',
   lineColor: '#EAEBEB',
   white: '#ffffff',
   background: '#fafafafa',
