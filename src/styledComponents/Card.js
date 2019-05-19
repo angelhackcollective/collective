@@ -16,7 +16,7 @@ const FilterStyles = styled.div`
 
 const CardContainer = styled(Card)`
   minWidth: 275;
-  margin: 30px;
+  margin: 30px 0;
   display: flex;
 `;
 

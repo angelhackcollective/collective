@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Filter from '../../components/Filter';
+import Medications from '../../components/Medications';
 
 class BrowseList extends Component {
   constructor(props) {
@@ -15,6 +16,7 @@ class BrowseList extends Component {
     return (
       <div>
         <Filter setFilters={this.setFilters} />
+        <Medications />
       </div>
     );
   }
