@@ -4,20 +4,8 @@ import Medications from '../../components/Medications';
 import data from '../../components/Medications/data';
 import SymptomsModal from '../../components/SymptomsModal';
 import Button from '../../styledComponents/Button';
+import { HeadWrapper } from '../../styledComponents/Header';
 import styled from 'styled-components';
-
-const HeadWrapper = styled.div`
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  margin-bottom: 1rem;
-
-  h1 {
-    font-weight: bold;
-    font-size: 18px;
-    margin: 0;
-  }
-`;
 
 // TODO GET MEDICATIONS
 const BrowseList = () => {
