@@ -37,6 +37,7 @@ const fakeSymptoms = [
 ]
 
 const Symptoms = ({symptoms}, props) => {
+  console.log("symptoms",symptoms)
   console.log("TODO, build list of symptom cards", props)
   return fakeSymptoms.map((item,i) => <SymptomCard {...item}/>)
 };
