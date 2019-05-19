@@ -2,6 +2,7 @@
 import React, { Fragment } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
+import { SimilarSmall } from '../../styledComponents/Similar';
 import { FilterStyles, MyCardContent, GraphContent } from '../../styledComponents/Card';
 
 const styles = {
@@ -23,6 +24,7 @@ const MedicationCard = ({info, classes}) => {
             <h4>
               {info.name}
             </h4>
+            <SimilarSmall />
             <FilterStyles>
               <Typography classes={{
                 root: classes.title}}>

@@ -4,7 +4,7 @@ import { colors } from './index';
 
 const PillWrapper = styled.div`
   border-radius: 8px;
-  background-color: #e5f2ff;
+  background-color: ${({color}) => color ? colors[color] : "#e5f2ff"};
   display: flex;
   flex-direction: row;
   padding: 4px 10px;
@@ -22,9 +22,9 @@ const PillWrapper = styled.div`
   }
 `;
 
-const Pill = ({name, val, func, ...rest}) => {
+const Pill = ({name, val, color, func, ...rest}) => {
   return (
-    <PillWrapper>
+    <PillWrapper color={color}>
       <p className="name">{name}</p>
       <p className="close" onClick={() => func(val)}>X</p>
     </PillWrapper>
@@ -32,4 +32,5 @@ const Pill = ({name, val, func, ...rest}) => {
 };
 
 export default Pill;
+export { PillWrapper }
 

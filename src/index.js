@@ -5,9 +5,9 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter } from "react-router-dom";
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faTimes, faHeart } from '@fortawesome/free-solid-svg-icons';
 
-library.add(faTimes);
+library.add(faTimes, faHeart);
 
 ReactDOM.render(
     <BrowserRouter>
