@@ -49,9 +49,9 @@ const BrowseList = () => {
 
       return accumulator
     }, [])
-    console.log("FILTERED MEDS FIN", medicationsFiltered)
-    if (!filteredMedications.length) {
-      setMedications(data)
+
+    if (!medicationsFiltered.length) {
+      setMedications(medData)
     }
     setMedications(medicationsFiltered)
   }
