@@ -25,18 +25,15 @@ class Navbar extends Component {
 
   render() {
     return (
-      <div id="navbar">
       <NavContainer>
         <h3>
           co<span>llective</span>
         </h3>
         <div>
           {localStorage.token ? (
-            <li className="navbar-links">
               <button type="button" onClick={this.logout}>
                 Logout
               </button>
-            </li>
           ) : (
             <LinkContainer>
                 <Link to="/signup">Sign Up/</Link>
@@ -45,7 +42,6 @@ class Navbar extends Component {
           )}
         </div>
         </NavContainer>
-      </div>
     );
   }
 }

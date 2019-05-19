@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom';
 import Button from '../styledComponents/Button';
 import { Input } from '../styledComponents/Inputs';
 import axios from 'axios';
+// import Heart from '../components/Icons/Heart';
 
 class Login extends Component {
   constructor(props) {
