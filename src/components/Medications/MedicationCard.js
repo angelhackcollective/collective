@@ -20,7 +20,7 @@ const styles = {
 };
 
 const MedicationCard = ({info, classes}) => {
-  console.log(info)
+  console.log("Medication card", info)
       return (
         <Wrapper>
           <div className="headerRow">

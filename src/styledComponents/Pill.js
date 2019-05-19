@@ -22,11 +22,12 @@ const PillWrapper = styled.div`
   }
 `;
 
-const Pill = ({name, val, color, func, ...rest}) => {
+const Pill = ({name, val, color, func, num, ...rest}) => {
   return (
     <PillWrapper color={color}>
       <p className="name">{name}</p>
-      <p className="close" onClick={() => func(val)}>X</p>
+      {num && <p className="close">: {num}</p>}
+      {func && <p className="close" onClick={() => func(val)}>x</p>}
     </PillWrapper>
   )
 };

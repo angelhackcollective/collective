@@ -16,6 +16,7 @@ const colors = {
   logoRed: '#c72d4d',
   red: '#a91735',
   lightPink: '#fff8fb',
+  lightBlue: '#e5f2ff',
 }
 const media = Object.keys(sizes).reduce((acc, label) => {
   acc[label] = (...args) => css`

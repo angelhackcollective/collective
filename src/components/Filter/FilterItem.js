@@ -6,6 +6,7 @@ import {
 import CheckBox from '../CheckBox';
 
 const FilterItem = ({title, opts, add, remove}) => {
+  console.log("OPTS", opts)
   return (
     <FilterWrapper>
       <h2>{title}</h2>

@@ -11,13 +11,13 @@ import seedData from '../../seedData'
 
 // TODO GET MEDICATIONS
 const BrowseList = () => {
+
   const [modalOpen, toggleModal] = useState(false);
   const [filters, setFilters] = useState([]);
   const [medications, setMedications] = useState(seedData)
   const [filteredMedications, filteredMeds] = useState(medications)
 
   const updateFilters = (filters) => {
-
     let filtersObject = {}
     filtersObject = filters.reduce((accumulator, filter) => {
       if (filter === "Low" || filter === "Medium" || filter === "High") {

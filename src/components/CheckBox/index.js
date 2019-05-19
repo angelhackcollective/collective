@@ -14,7 +14,7 @@ const Inputs = ({name, val, func}) => (
 const CheckBox = ({name, val, subOpts, add, remove}) => {
   const [ checked, setCheck ] = useState(false)
   const [ visible, toggleOpts ] = useState(false)
-
+  console.log("CHECK BOX", name, val, subOpts )
   const setFilter = (name) => {
     setCheck(!checked)
     if (!checked) {
@@ -28,7 +28,7 @@ const CheckBox = ({name, val, subOpts, add, remove}) => {
     toggleOpts(!visible)
     setFilter(name)
   };
-  if (val === "type-oral") {
+  if (val === "Oral") {
     return (
       <Indent>
         <Inputs name={name} val={val} func={showOpts} />

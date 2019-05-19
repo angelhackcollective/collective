@@ -1,17 +1,19 @@
 import React, { useState } from 'react';
 import Symptoms from '../../components/Symptoms';
 import Button, { OutlinedButton } from '../../styledComponents/Button';
+import Pill from '../../styledComponents/Pill';
 import { SimilarLarge } from '../../styledComponents/Similar';
 import { HeadWrapper } from '../../styledComponents/Header';
 import SymptomsModal from '../../components/Symptoms/SymptomsModal';
 import { Link } from 'react-router-dom';
 import { Card, Percent, SideEffects, Experiences } from './styles';
 
-const MedicationView = ({history}) => {
+const MedicationView = ({history}, ...props) => {
   const [modalOpen, toggleModal] = useState(false);
   console.log("TODO", "set up medication view", history)
+  console.log("REST PROPS", props)
   const { medication } = history.location.state
-  console.log(medication)
+  console.log("IN MEDICATION VIEW", medication)
   return (
     <div>
       <SymptomsModal
@@ -33,12 +35,16 @@ const MedicationView = ({history}) => {
             <p className="name">{medication.type}</p>
           </div>
           <div className="filterPair">
+            <p className="type">Pill Type</p>
+            <p className="name">{medication.pillType}</p>
+          </div>
+          <div className="filterPair">
             <p className="type">Effort</p>
             <p className="name">{medication.efforts}</p>
           </div>
           <div className="filterPair">
             <p className="type">EFFICACY</p>
-            <p className="name">99%</p>
+            <p className="name">{medication.efficacy}</p>
           </div>
         </div>
         <SimilarLarge />
@@ -67,20 +73,34 @@ const MedicationView = ({history}) => {
           <h2 className="section-title">Commonly Reported Side Effects:</h2>
           <div className="sideEffects">
             {
-              medication.reports.map((item,i) => (
-                <p key={i} className="side_effect">{item.name}, </p>
+              medication.commonlyReported.map((item,i) => (
+                <p key={i} className="side_effect">{item}, </p>
               ))
             }
           </div>
         </SideEffects>
         <Experiences>
           <div className="header">
-            <h2 className="section-title">Commonly Reported Side Effects:</h2>
+            <h2 className="section-title">Reported Experiences:</h2>
             <div className="sortContainer">
               <p>Sort by:</p>
               <OutlinedButton>All Women</OutlinedButton>
             </div>
           </div>
+          <div style={{display: 'flex', flexWrap:'wrap'}}>
+              {
+                medication.conditions.map((item, i) => {
+                  console.log(item)
+                  return (
+                  <Pill
+                    color="lightBlue"
+                    name={item.condit}
+                    val={item.condit}
+                    num={item.amount}
+                  />
+                )})
+              }
+            </div>
         </Experiences>
         <Symptoms
           {...medication}

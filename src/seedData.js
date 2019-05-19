@@ -114,12 +114,32 @@ var data = [
   efficacy: '99% with typical use',
   efforts: 'High',
   commonlyReported: ['Headache, mentrual period changes, spotting, missed/irregular period, nausea (when you first take it), vomiting, bloating, stomach cramps, breast tenderness/swelling, fatigue, irritability, decreased sex drive, mood changes, increased chance of blood clots, changes in weight, swelling of feet, vaginal itching'],
-  depression: 3,
-  weightLoss: 1,
-  fatigue: 1,
-  anxiety: 1,
-  moodchange: 1,
-  acne: 2,
+  conditions: [
+    {
+      condit:"depression",
+      amount: 3,
+    },
+    {
+      condit:"weightLoss",
+      amount: 1,
+    },
+    {
+      condit:"fatigue",
+      amount: 1,
+    },
+    {
+      condit:"anxiety",
+      amount: 1,
+    },
+    {
+      condit:"moodchange",
+      amount: 1,
+    },
+    {
+      condit:"acne",
+      amount: 2,
+    },
+  ],
   reports: [
   {
     user: 'susuwatari',
