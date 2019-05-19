@@ -4,23 +4,35 @@ import { NavLink } from 'react-router-dom';
 
 const NavContainer = styled.div`
   height: 60px;
-  top: 0;
   background: ${colors.blue};
-  position: relative;
+  width: 100%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  h3 {
-    margin-left: 20px;
-    color: ${colors.red};
-    font-size: 24px
-    a {
-      color: ${colors.white};
+
+  .navWrapper {
+    max-width: 990px;
+    margin: 0 auto;
+    max-width: 990px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h3 {
+      margin: 0;
+      margin-left: 20px;
+      color: ${colors.red};
+      font-size: 24px
+      a {
+        color: ${colors.white};
+      }
     }
-  }
-  span{
-    font-size:20px
-    color:${colors.white};
+    span{
+      font-size:20px
+      color:${colors.white};
+    }
+
   }
 `;
 
