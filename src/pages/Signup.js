@@ -2,7 +2,6 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import axios from "axios";
-import { MyBox } from "../styles"
 
 class Signup extends Component {
   constructor(props) {
@@ -18,7 +17,6 @@ class Signup extends Component {
 
   handleChange(e) {
     e.preventDefault();
-
     const { value, name } = e.target;
 
     this.setState({
@@ -85,7 +83,7 @@ class Signup extends Component {
         <input
           type="passwordConf"
           name="passwordConf"
-          placeholder="Confirm Password"
+          placeholder="Re-enter Password"
           value={passwordConf}
           onChange={this.handleChange}
         />

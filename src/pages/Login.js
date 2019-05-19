@@ -71,6 +71,7 @@ class Login extends Component {
           onChange={this.handleChange}
         />
         <button type="submit">Login</button>
+        Don't have an account? <a href="/Signup" >Sign up</a> here
       </form>
     );
   }
