@@ -1,6 +1,6 @@
 /* eslint-disable react/forbid-prop-types */
 import React, { Component } from "react";
-import { Input, Select } from '../../styledComponents/Inputs';
+import { Input, Select, Label } from '../../styledComponents/Inputs';
 import Button from '../../styledComponents/Button';
 import { Form, Header, FormWrapper } from './styles';
 const options = [
@@ -52,16 +52,19 @@ class PersonalDetails extends Component {
             value={dob}
             onChange={this.handleChange}
           />
-          <Select onChange={this.handleChange}>
-            <option value={''}>Ethnicity</option>
-            {options.map((ethnicity, i) => (
-              <option
-                key={i}
-                value={ethnicity}>
-                  {ethnicity}
-              </option>
-            ))}
-          </Select>
+          <div>
+            <Label>Ethnicity</Label>
+            <Select onChange={this.handleChange}>
+              <option value={''}></option>
+              {options.map((ethnicity, i) => (
+                <option
+                  key={i}
+                  value={ethnicity}>
+                    {ethnicity}
+                </option>
+              ))}
+            </Select>
+          </div>
           <Button type="submit">Submit</Button>
         </Form>
       </FormWrapper>

@@ -24,6 +24,7 @@ class Navbar extends Component {
 
 
   render() {
+    const { location } = this.props;
     return (
       <div id="navbar">
       <NavContainer>
@@ -39,8 +40,11 @@ class Navbar extends Component {
             </li>
           ) : (
             <LinkContainer>
-                <Link to="/signup">Sign Up/</Link>
-                <Link to="/login">Login</Link>
+                { location.pathname === "/login" ? (
+                  <Link to="/signup">Sign Up</Link>
+                ) : (
+                  <Link to="/login">Login</Link>
+                )}
             </LinkContainer>
           )}
         </div>
