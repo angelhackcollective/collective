@@ -24,7 +24,6 @@ function getRandomInt(max) {
 }
 
 function generate() {
-
   for (let i = 0; i < 30; i++) {
     var rEfforts = getRandomInt(efforts.length);
     var rnames = getRandomInt(names.length);
@@ -42,8 +41,6 @@ function generate() {
         symptoms: rsymptoms, 
       });
   }
-
-
 }
 
 generate();
