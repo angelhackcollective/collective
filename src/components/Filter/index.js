@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import Button from '../../styledComponents/Button';
 import { OutlinedButton } from '../../styledComponents/Button';
 import Pill from '../../styledComponents/Pill';
+import Modal from '../Modal';
 import {
-  HeadWrapper,
   FilterContainer,
   Filters,
   BtnWrapper,
@@ -40,10 +40,6 @@ class Filter extends Component {
     const { filters } = this.state;
     return (
       <div>
-        <HeadWrapper>
-          <h1>Birth Control Options</h1>
-          <Button color="red">Report Side Effect</Button>
-        </HeadWrapper>
         <FilterContainer>
           <Filters>
             {filterData.map((item, i) => <FilterItem remove={this.removeFilter} add={this.addFilter} {...item} key={i}/>)}

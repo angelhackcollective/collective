@@ -1,19 +1,6 @@
 import styled from 'styled-components';
 import { colors } from '../../styledComponents';
 
-const HeadWrapper = styled.div`
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  margin-bottom: 1rem;
-
-  h1 {
-    font-weight: bold;
-    font-size: 18px;
-    margin: 0;
-  }
-`;
-
 const FilterContainer = styled.div`
   display: flex;
   flex-direction: row;
@@ -79,7 +66,6 @@ const SubFilter = styled.div`
 `;
 
 export {
-  HeadWrapper,
   FilterContainer,
   Filters,
   FilterWrapper,
