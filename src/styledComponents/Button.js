@@ -10,7 +10,7 @@ const defaultButtonStyle = color => `
   background-color: ${color ? colors[color] : colors.blue};
   border-radius: 2px;
   cursor: pointer;
-  transition: background-color .5s ease, color .5s ease, box-shadow 0.3s ease 0s;
+  transition: background-color .3s ease, color .3s ease;
   padding-top: 12px;
   padding-bottom: 11px;
   padding-right: 28px;
@@ -23,10 +23,9 @@ const defaultButtonStyle = color => `
   }
 
   :hover {
-    background-color: ${colors.white};
-    color: ${color ? colors[color] : colors.blue};
-    box-shadow: 0px 0px 0px 2px ${color ? colors[color] : colors.blue};
-    transition: background-color .5s ease 0s, color .5s ease 0s, box-shadow 0.3s ease 0s;
+    background-color: ${colors.midGrey};
+    color: ${colors.white};
+    transition: background-color .3s ease 0s, color .3s ease 0s;
   }
   :focus {
     outline: none;
@@ -39,17 +38,16 @@ const Button = styled.button`
 
 const OutlinedButton = styled(Button)`
   background-color: transparent;
-  color: ${colors.blue};
-  min-width: 270px;
-  box-shadow: 0px 0px 0px 1px ${colors.blue};
-  transition: box-shadow 0.3s ease 0s, border-color .3s ease 0s;
-  :hover {
-    background: transparent;
-    color: ${colors.white};
-    box-shadow: 0px 0px 0px 3px ${colors.blue};
-    border-color: ${colors.blue};
-    transition: box-shadow 0.3s ease 0s, border-color .3s ease 0s;
-  }
+  color: ${colors.midGrey};
+  min-width: 120px;
+  height: 30px;
+  box-shadow: 0px 0px 0px 1px ${colors.midGrey};
+  transition: box-shadow 0.3s ease 0s;
+  border: none;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-right: 15px;
+  padding-left: 15px;
 `;
 
 export { OutlinedButton };

@@ -15,11 +15,11 @@ const HeadWrapper = styled.div`
 `;
 
 const FilterContainer = styled.div`
-  width: 100%;
   display: flex;
   flex-direction: row;
   padding: 1rem;
-  background-color: ${colors.lineColor}
+  background-color: ${colors.lineColor};
+  margin-bottom: 1rem;
 `;
 
 const Filters = styled.div`
@@ -46,25 +46,36 @@ const FilterWrapper = styled.div`
 const FilterBtnWrapper = styled.div`
   display: flex;
   justify-content: space-around;
-`;
-
-const CheckWrapper = styled.div`
-  display: flex;
-  align-items: center;
-
-  input {
-    margin: 0;
-    margin-right: 1rem;
-  }
-
-  label {
-    font-size: 14px;
-    letter-spacing: 0;
-  }
+  align-items: flex-start;
 `;
 
 const BtnWrapper = styled.div`
   width: 15%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+`;
+
+
+const SubFilter = styled.div`
+  display: flex;
+  margin-bottom: 20px;
+  align-items: center;
+  justify-content: space-between;
+
+  .pillContainer {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .sortContainer {
+    display: flex;
+    align-items: center;
+
+    p {
+      margin-right: 10px;
+    }
+  }
 `;
 
 export {
@@ -74,5 +85,5 @@ export {
   FilterWrapper,
   FilterBtnWrapper,
   BtnWrapper,
-  CheckWrapper,
+  SubFilter,
 }

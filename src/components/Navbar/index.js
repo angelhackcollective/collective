@@ -25,30 +25,28 @@ class Navbar extends Component {
   render() {
     const { location } = this.props;
     return (
-      <div id="navbar">
       <NavContainer>
-        <h3>
-          co<span>llective</span>
-        </h3>
-        <div>
-          {localStorage.token ? (
-            <li className="navbar-links">
-              <button style={{color: "#fff"}}type="button" onClick={this.logout}>
-                Logout
-              </button>
-            </li>
-          ) : (
-            <LinkContainer>
-                { location.pathname === "/login" ? (
-                  <Link color="white" to="/signup">Sign Up</Link>
-                ) : (
-                  <Link color="white" to="/login">Login</Link>
-                )}
-            </LinkContainer>
-          )}
+        <div className="navWrapper">
+          <h3>
+            co<span>llective</span>
+          </h3>
+          <div>
+            {localStorage.token ? (
+                <button style={{color: "#fff", backgroundColor: "transparent", border: "none"}} type="button" onClick={this.logout}>
+                  Logout
+                </button>
+            ) : (
+              <LinkContainer>
+                  { location.pathname === "/login" ? (
+                    <Link color="white" to="/signup">Sign Up</Link>
+                  ) : (
+                    <Link color="white" to="/login">Login</Link>
+                  )}
+              </LinkContainer>
+            )}
+          </div>
         </div>
         </NavContainer>
-      </div>
     );
   }
 }
