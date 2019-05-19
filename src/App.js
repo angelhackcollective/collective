@@ -3,6 +3,7 @@ import { Switch } from "react-router-dom";
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import BrowseList from './pages/BrowseList';
+import MedicationView from './pages/MedicationView';
 import Landing from './pages/Landing';
 import Navbar from './components/Navbar';
 import AuthRoute from './components/AuthRoute';
@@ -15,6 +16,7 @@ function App() {
       <Switch>
         <WithBackground exact path="/" component={Landing} />
         <AuthRoute exact path="/browse" component={BrowseList} />
+        <AuthRoute path="/browse/:name" component={MedicationView} />
         <DefaultLayout exact path="/login" component={Login} />
         <WithBackground exact path="/signup" component={Signup} />
       </Switch>
