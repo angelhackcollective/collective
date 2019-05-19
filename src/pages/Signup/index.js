@@ -73,17 +73,17 @@ class Signup extends React.Component {
 
   async signUp() {
     const { url, patientData } = this.state
-    const res = await axios.post(url, patientData).catch(err => {
-      console.log("ERROR")
-      console.log(err)
-    })
+    // const res = await axios.post(url, patientData).catch(err => {
+    //   console.log("ERROR")
+    //   console.log(err)
+    // })
     localStorage.setItem("token", patientData.username);
     localStorage.setItem("username", patientData.username);
     this.props.history.push("/")
   }
 
   render() {
-    const { activeStep } = this.state
+    const { activeStep, resultData } = this.state
     const ComponentStep = components[activeStep]
     const steps = getSteps()
     const { classes } = this.props

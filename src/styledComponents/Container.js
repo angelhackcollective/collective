@@ -6,7 +6,7 @@ const Container = styled.div`
   width: 90%;
 
   ${media.tablet`
-    width: 668px;
+    width: 990px;
   `}
 
   ${media.desktop`
