@@ -67,8 +67,8 @@ const MedicationView = ({history}) => {
           <h2 className="section-title">Commonly Reported Side Effects:</h2>
           <div className="sideEffects">
             {
-              medication.symptoms.map((item,i) => (
-                <p key={i} className="side_effect">{item}, </p>
+              medication.reports.map((item,i) => (
+                <p key={i} className="side_effect">{item.name}, </p>
               ))
             }
           </div>

@@ -20,6 +20,7 @@ const styles = {
 };
 
 const MedicationCard = ({info, classes}) => {
+  console.log(info)
       return (
         <Wrapper>
           <div className="headerRow">
@@ -37,7 +38,7 @@ const MedicationCard = ({info, classes}) => {
                 <FilterStyles>
                   <Typography classes={{
                     root: classes.title}}>
-                    <span className="title_span">TYPE</span> <span>"insert"</span>
+                    <span className="title_span">TYPE</span> <span>{info.type}</span>
                   </Typography>
                   <Typography classes={{
                     root: classes.title}}>
@@ -49,14 +50,13 @@ const MedicationCard = ({info, classes}) => {
                   </Typography>
                   <Typography classes={{
                     root: classes.title}}>
-                    <span className="title_span">EFFICACY</span> <span>"insert"</span>
+                    <span className="title_span">EFFICACY</span> <span>{info.efficacy}</span>
                   </Typography>
                 </FilterStyles>
                 <p className="side-effects-title">COMMONLY REPORTED SIDE-EFFECTS: </p>
                   <Typography classes={{
                     root: classes.answer}}>
-                  {
-                    info.symptoms.map((s, i) => {
+                  {info.commonlyReported && info.commonlyReported.map((s, i) => {
                       return `${s}, `;
                     }
                 )}

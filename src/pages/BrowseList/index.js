@@ -7,13 +7,13 @@ import Button from '../../styledComponents/Button';
 import { HeadWrapper } from '../../styledComponents/Header';
 import styled from 'styled-components';
 import { filter } from 'rsvp';
-import medData from '../../components/Medications/data'
+import seedData from '../../seedData'
 
 // TODO GET MEDICATIONS
 const BrowseList = () => {
   const [modalOpen, toggleModal] = useState(false);
   const [filters, setFilters] = useState([]);
-  const [medications, setMedications] = useState(data)
+  const [medications, setMedications] = useState(seedData)
   const [filteredMedications, filteredMeds] = useState(medications)
 
   const updateFilters = (filters) => {
@@ -38,9 +38,9 @@ const BrowseList = () => {
     }, {})
 
     let medicationsFiltered = []
-    medicationsFiltered = medData.reduce((accumulator, med) => {
+    medicationsFiltered = seedData.reduce((accumulator, med) => {
       if (filtersObject.effort && filtersObject.effort.includes(med.efforts)) {
-        accumulator.push(med) 
+        accumulator.push(med)
       }
 
       if (filtersObject.efficacy && filtersObject.efficacy.includes(med.efficacy)) {
@@ -51,7 +51,7 @@ const BrowseList = () => {
     }, [])
 
     if (!medicationsFiltered.length) {
-      setMedications(medData)
+      setMedications(seedData)
     }
     setMedications(medicationsFiltered)
   }
