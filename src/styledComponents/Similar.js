@@ -25,7 +25,7 @@ const SmallWrapper = styled(Wrapper)`
   ${() => defaultStyles()}
   width: 150px;
   p {
-    font-size: 12px;
+    font-size: 12px !important;
   }
 `;
 

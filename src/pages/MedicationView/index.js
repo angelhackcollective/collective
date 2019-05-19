@@ -103,7 +103,7 @@ const MedicationView = ({history}, ...props) => {
             </div>
         </Experiences>
         <Symptoms
-          {...medication}
+          symptoms={medication.reports}
         />
       </Card>
     </div>

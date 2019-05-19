@@ -1,21 +1,25 @@
 import React from 'react';
 import { Wrapper } from './styles';
+import { SimilarSmall } from '../../../styledComponents/Similar';
 
-const SymptomCard = ({name, date, ethnicity, yearsOld, description, color, ...props}) => {
+const SymptomCard = ({user, dateReported, ethnicity, age, experience, similar, ...props}) => {
   console.log("Other Props", props)
   return (
-    <Wrapper color={color}>
+    <Wrapper color="blue">
       <div className="logoContainer">
-        <p className="logo">{name[0]}</p>
+        <p className="logo">{user[0]}</p>
       </div>
       <div className="container">
-        <p>{name}</p>
+        <div style={{display: "flex", justifyContent: "space-between"}}>
+          <p>{user}</p>
+          {similar && <SimilarSmall />}
+        </div>
         <div className="dates">
-          <p>{date}</p>
-          <p>{ethnicity}, {yearsOld} years old</p>
+          <p>{dateReported}</p>
+          <p>{ethnicity}, {age} years old</p>
         </div>
         <div className="details">
-          <p>{description}</p>
+          <p>{experience}</p>
         </div>
       </div>
     </Wrapper>
