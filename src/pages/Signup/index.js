@@ -75,7 +75,7 @@ class Signup extends React.Component {
     // })
     localStorage.setItem("token", patientData.username);
     localStorage.setItem("username", patientData.username);
-    this.props.history.push("/")
+    this.props.history.push("/browse")
   }
 
   render() {

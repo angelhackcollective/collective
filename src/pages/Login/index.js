@@ -48,7 +48,7 @@ class Login extends Component {
         password: ""
       });
 
-      history.push("/");
+      history.push("/browse");
     } catch (err) {
       console.error(err);
     }
