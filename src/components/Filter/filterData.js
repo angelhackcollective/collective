@@ -4,19 +4,19 @@ const filterData = [
     opts: [
       {
         name: "Oral (Pill)",
-        val: "type-oral",
+        val: "Oral",
         subOpts: [
           {
             name: "Mini (Non-Estrogen)",
-            val: "type-oral-mini",
+            val: "Mini",
           },
           {
             name: "Combo (Progestin and Estrogen)",
-            val: "type-oral-combo",
+            val: "Combo",
           },
           {
             name: "Extended Cycle",
-            val: "type-oral-extended",
+            val: "Extended Cycle",
           },
         ]
       },

@@ -40,7 +40,7 @@ const MedicationCard = ({info, classes}) => {
               </Typography>
               <Typography classes={{
                 root: classes.title}}>
-                <span className="title_span">EFFICACY</span> <span>"insert"</span>
+                <span className="title_span">EFFICACY</span> <span>{info.efficacy}</span>
               </Typography>
             </FilterStyles>
             <p className="side-effects-title">COMMONLY REPORTED SIDE-EFFECTS: </p>
