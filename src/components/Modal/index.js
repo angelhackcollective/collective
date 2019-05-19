@@ -18,13 +18,14 @@ const Modal = ({ open, toggleModal, label, children }) => (
         display: 'flex',
         left: 0,
         right: 0,
-        top: '150px',
+        top: '100px',
         margin: '0 auto',
         padding: 0,
         background: '#ffffff',
         border: 'none',
         borderRadius: 0,
         overflow: 'scroll',
+        bottom: 'unset',
       },
     }}
     closeTimeoutMS={0}

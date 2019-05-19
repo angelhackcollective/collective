@@ -1,7 +1,7 @@
 /* eslint-disable react/forbid-prop-types */
 import React, { useState } from "react";
-import { Input, Label, Select, TextArea } from '../../styledComponents/Inputs';
-import Button from '../../styledComponents/Button';
+import { Input, Label, Select, TextArea } from '../../../styledComponents/Inputs';
+import Button from '../../../styledComponents/Button';
 import { Current, CustomContainer, Form, Header, HeaderWrapper, FormWrapper } from './styles';
 
 const data = [
@@ -67,7 +67,7 @@ const Sel = ({title, titleVal, list, helper, func}) => (
   </div>
 );
 
-const SymptomForm = ({toggleModal, open}) => {
+const SymptomForm = ({ completeForm, completed }) => {
   const [formData, setFormData] = useState({})
 
   const handleChange = (e) => {
@@ -87,7 +87,7 @@ const SymptomForm = ({toggleModal, open}) => {
   const handleSubmit = (e) => {
     e.preventDefault()
     console.log("SUBMIT DATA", formData)
-    toggleModal()
+    completeForm(!completed)
   }
 
   return (
@@ -132,7 +132,7 @@ const SymptomForm = ({toggleModal, open}) => {
           value={formData.experience}
           onChange={handleChange}
         />
-        <Button type="submit">Close</Button>
+        <Button type="submit">Submit to Collective</Button>
       </Form>
     </FormWrapper>
     </CustomContainer>

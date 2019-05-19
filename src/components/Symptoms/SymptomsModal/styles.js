@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import Container from '../../styledComponents/Container';
-import { colors } from '../../styledComponents';
-import { Input } from '../../styledComponents/Inputs';
+import Container from '../../../styledComponents/Container';
+import { colors } from '../../../styledComponents';
+import { Input } from '../../../styledComponents/Inputs';
 
 const CustomContainer = styled(Container)`
   width: 90%;
@@ -82,6 +82,30 @@ label {
   }
 `;
 
+const SuccessWrapper = styled.div`
+  padding: 35px 0 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .iconWrapper {
+    .heart-icon {
+      height: 45px;
+    }
+
+    svg {
+      width: 100%;
+      path {
+        fill: ${colors.logoRed};
+        width: 45px;
+      }
+    }
+
+    margin-bottom: 15px;
+  }
+
+`;
+
 export {
   CustomContainer,
   FormWrapper,
@@ -90,4 +114,5 @@ export {
   HeaderWrapper,
   Header,
   Current,
+  SuccessWrapper
 }

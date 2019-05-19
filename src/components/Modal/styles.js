@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colors } from '../../../styledComponents';
+import { colors } from '../../styledComponents';
 
 const Wrapper = styled.div`
   height: 100%;

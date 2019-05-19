@@ -3,7 +3,7 @@ import Symptoms from '../../components/Symptoms';
 import Button from '../../styledComponents/Button';
 import { SimilarLarge } from '../../styledComponents/Similar';
 import { HeadWrapper } from '../../styledComponents/Header';
-import SymptomsModal from '../../components/SymptomsModal';
+import SymptomsModal from '../../components/Symptoms/SymptomsModal';
 import { Link } from 'react-router-dom';
 import { Card } from './styles';
 

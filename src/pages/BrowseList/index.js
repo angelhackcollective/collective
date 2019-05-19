@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Filter from '../../components/Filter';
 import Medications from '../../components/Medications';
 import data from '../../components/Medications/data';
-import SymptomsModal from '../../components/SymptomsModal';
+import SymptomsModal from '../../components/Symptoms/SymptomsModal';
 import Button from '../../styledComponents/Button';
 import { HeadWrapper } from '../../styledComponents/Header';
 import styled from 'styled-components';
