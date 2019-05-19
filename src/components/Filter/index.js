@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Button from '../../styledComponents/Button';
 import { OutlinedButton } from '../../styledComponents/Button';
 import Pill from '../../styledComponents/Pill';
-import Modal from '../Modal';
 import {
   FilterContainer,
   Filters,
@@ -16,10 +15,11 @@ class Filter extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      filters: ["IUD", "IUS"],
+      filters: [],
     }
     this.addFilter = this.addFilter.bind(this);
     this.removeFilter = this.removeFilter.bind(this);
+    this.setFilters = this.setFilters.bind(this);
   }
 
   addFilter(filter) {
@@ -36,6 +36,13 @@ class Filter extends Component {
     })
   }
 
+  setFilters() {
+    console.log("TODO, SET FILTERS")
+    const { filters } = this.state;
+    const { updateFilters } = this.props;
+    updateFilters(filters);
+  }
+
   render() {
     const { filters } = this.state;
     return (
@@ -45,7 +52,7 @@ class Filter extends Component {
             {filterData.map((item, i) => <FilterItem remove={this.removeFilter} add={this.addFilter} {...item} key={i}/>)}
           </Filters>
           <BtnWrapper>
-            <Button>Filter</Button>
+            <Button onClick={() => this.setFilters()}>Filter</Button>
           </BtnWrapper>
         </FilterContainer>
         <SubFilter>

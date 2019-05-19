@@ -10,3 +10,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.ReactModal__Body--open {
+  overflow: hidden;
+}
+
+.ReactModal__Overlay {
+  overflow: scroll;
+}

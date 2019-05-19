@@ -1,13 +1,8 @@
 
 import React, { Fragment } from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import { FilterStyles, CardContainer, MyCardContent, FilterTitles, GraphContent } from '../../styledComponents/Card';
-import { green } from '@material-ui/core/colors';
+import { FilterStyles, MyCardContent, GraphContent } from '../../styledComponents/Card';
 
 const styles = {
     title: {

@@ -54,12 +54,13 @@ const SelectInput = styled.select`
   }
 `;
 
-const TextArea = styled.textarea`
+const TextAreaInput = styled.textarea`
   ${() => defaultInputStyles()}
-
+  height: unset;
   border: 1px solid ${colors.blue};
-  cols: ${props => props.cols ? props.cols : undefined};
-  rows: ${props => props.rows ? props.rows : undefined};
+  padding: 0;
+  padding-top: 10px;
+  text-indent: 10px;
 `;
 
 const SelectContainer = styled.div`
@@ -78,14 +79,23 @@ const SelectContainer = styled.div`
   }
 `;
 
-const Input = ({label, name, ...rest}) => {
+const Input = ({label, name, className, selected, ...rest}) => {
   return (
-    <InputWrapper>
+    <InputWrapper className={className}>
       <Label htmlFor={name}>{label}</Label>
-      <StyledInput name={name} {...rest} />
+      <StyledInput name={name} {...rest}  />
     </InputWrapper>
   )
 };
+
+const TextArea = ({label, name, className, ...rest}) => {
+  return (
+    <InputWrapper className={className}>
+      <Label htmlFor={name}>{label}</Label>
+      <TextAreaInput rows="10" name={name} {...rest} />
+    </InputWrapper>
+  )
+}
 
 const Select = ({ children, value, name, onChange, className }) => (
   <SelectContainer className={className}>

@@ -59,6 +59,7 @@ class PersonalDetails extends Component {
               {options.map((ethnicity, i) => (
                 <option
                   key={i}
+                  name="ethnicity"
                   value={ethnicity}>
                     {ethnicity}
                 </option>

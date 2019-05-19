@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import ReactModal from 'react-modal';
 import { Wrapper } from './styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -15,16 +14,17 @@ const Modal = ({ open, toggleModal, label, children }) => (
         backgroundColor: 'rgba(51, 51, 51, 0.5)',
       },
       content: {
-        width: '240px',
-        height: '360px',
+        width: '550px',
+        display: 'flex',
         left: 0,
         right: 0,
         top: '150px',
         margin: '0 auto',
         padding: 0,
-        background: 'none',
+        background: '#ffffff',
         border: 'none',
         borderRadius: 0,
+        overflow: 'scroll',
       },
     }}
     closeTimeoutMS={0}
@@ -44,11 +44,4 @@ const Modal = ({ open, toggleModal, label, children }) => (
 );
 
 export default Modal;
-
-Modal.propTypes = {
-  open: PropTypes.bool.isRequired,
-  toggleModal: PropTypes.func.isRequired,
-  label: PropTypes.string,
-  children: PropTypes.array.isRequired,
-};
 

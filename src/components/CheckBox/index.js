@@ -28,8 +28,6 @@ const CheckBox = ({name, val, subOpts, add, remove}) => {
     toggleOpts(!visible)
     setFilter(name)
   };
-
-  console.log(subOpts)
   if (val === "type-oral") {
     return (
       <Indent>
