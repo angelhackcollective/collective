@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { colors } from './index';
 import { NavLink } from 'react-router-dom';
-import { Fragment } from 'react';
 
 const NavContainer = styled.div`
   height: 60px;
@@ -12,7 +11,7 @@ const NavContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   h3 {
-    margin-left: 20px; 
+    margin-left: 20px;
     color: ${colors.red};
     font-size: 24px
     a {
@@ -38,4 +37,4 @@ const LinkContainer = styled.div`
 `;
 
 
-export { NavContainer, Link, LinkContainer }; 
+export { NavContainer, Link, LinkContainer };

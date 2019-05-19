@@ -2,7 +2,6 @@ import React from 'react';
 import {
   FilterWrapper,
   FilterBtnWrapper,
-  BtnWrapper,
   CheckWrapper,
 } from './styles';
 

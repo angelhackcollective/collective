@@ -1,6 +1,6 @@
 /* eslint-disable react/forbid-prop-types */
 import React, { Component } from "react";
-import { Input, Select, Label } from '../../styledComponents/Inputs';
+import { Input, Label } from '../../styledComponents/Inputs';
 import Button from '../../styledComponents/Button';
 import { Form, Header, HeaderWrapper, FormWrapper, Pill, PillWrapper } from './styles';
 import SelectSearch from 'react-select-search'

@@ -1,5 +1,4 @@
-import axios from "axios";
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { NavContainer, Link, LinkContainer } from '../../styledComponents/NavContainer';
 

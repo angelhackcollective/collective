@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import Button from '../../styledComponents/Button';
 import {
   HeadWrapper,

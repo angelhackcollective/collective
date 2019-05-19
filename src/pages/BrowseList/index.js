@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import Filter from '../../components/Filter';
 
 class BrowseList extends Component {
