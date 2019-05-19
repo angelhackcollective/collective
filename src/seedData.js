@@ -47,4 +47,3 @@ function generate() {
 }
 
 generate();
-console.log(fakeData)
