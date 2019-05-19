@@ -24,6 +24,7 @@ class Navbar extends Component {
 
 
   render() {
+    const { location } = this.props;
     return (
       <NavContainer>
         <h3>
@@ -36,8 +37,11 @@ class Navbar extends Component {
               </button>
           ) : (
             <LinkContainer>
-                <Link to="/signup">Sign Up/</Link>
-                <Link to="/login">Login</Link>
+                { location.pathname === "/login" ? (
+                  <Link to="/signup">Sign Up</Link>
+                ) : (
+                  <Link to="/login">Login</Link>
+                )}
             </LinkContainer>
           )}
         </div>

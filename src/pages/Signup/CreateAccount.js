@@ -3,7 +3,7 @@ import React, { Component, Fragment } from "react";
 import { withRouter } from "react-router-dom";
 import { Input } from '../../styledComponents/Inputs';
 import Button from '../../styledComponents/Button';
-import { Form, FormWrapper, CreateAccountHeader } from './styles';
+import { Form, FormWrapper, CreateAccountHeader, SubText } from './styles';
 import axios from "axios";
 
 class CreateAccount extends Component {
@@ -78,7 +78,6 @@ class CreateAccount extends Component {
           type="text"
           name="username"
           label="Username"
-          placeholder="Username"
           value={username}
           onChange={this.handleChange}
         />
@@ -97,6 +96,9 @@ class CreateAccount extends Component {
           onChange={this.handleChange}
         />
         <Button type="submit">Create Account</Button>
+        <SubText>
+            <p>Already have an account? <span onClick={() => this.props.history.push("/login")}>Log In</span> </p>
+          </SubText>
       </Form>
       </FormWrapper>
       </Fragment>

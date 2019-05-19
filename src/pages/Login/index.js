@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
-import Button from '../styledComponents/Button';
-import { Input } from '../styledComponents/Inputs';
+import Button from '../../styledComponents/Button';
+import { Input } from '../../styledComponents/Inputs';
+import { CustomContainer, Form, FormWrapper, CreateAccountHeader, SubText } from './styles';
 import axios from 'axios';
 // import Heart from '../components/Icons/Heart';
 
@@ -58,32 +59,34 @@ class Login extends Component {
   render() {
     const { username, password } = this.state;
     return (
-      <form onSubmit={this.handleSubmit}>
-        <Input
-          type="text"
-          name="username"
-          placeholder="Username"
-          value={username}
-          label="Username"
-          onChange={this.handleChange}
-        />
-        <input
-          type="text"
-          name="username"
-          placeholder="Username"
-          value={username}
-          onChange={this.handleChange}
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          value={password}
-          onChange={this.handleChange}
-        />
-
-        <Button type="submit">Login</Button>
-      </form>
+      <CustomContainer>
+        <CreateAccountHeader>
+        <h1>Browse and contribute to the community</h1>
+        <p>Report your symptoms or look for new birth control solutions</p>
+      </CreateAccountHeader>
+      <FormWrapper>
+        <Form onSubmit={this.handleSubmit}>
+          <Input
+            type="text"
+            name="username"
+            value={username}
+            label="Username"
+            onChange={this.handleChange}
+          />
+          <Input
+            type="password"
+            name="password"
+            label="Password"
+            value={password}
+            onChange={this.handleChange}
+          />
+          <Button type="submit">Sign In</Button>
+          <SubText>
+            <p>Don't have an account? <span onClick={() => this.props.history.push("/signup")}>Sign Up</span> </p>
+          </SubText>
+        </Form>
+        </FormWrapper>
+      </CustomContainer>
     );
   }
 }
