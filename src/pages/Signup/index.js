@@ -47,7 +47,7 @@ class Signup extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeStep: 3,
+      activeStep: 0,
       patientData: {},
       api: "https://hackathon-the-collective.herokuapp.com/api/v1/signup"
     };

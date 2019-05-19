@@ -12,9 +12,9 @@ const defaultInputStyles = () => `
   font-size: 14px;
   box-shadow: none;
   cursor: pointer;
-  width: 100%;
   margin-bottom: 20px;
-  padding-left: 1rem;
+  text-indent: 5px;
+  width: 100%;
 
   :focus {
     outline: none;
@@ -46,6 +46,7 @@ const InputWrapper = styled.div`
 
 const SelectInput = styled.select`
   ${() => defaultInputStyles()}
+  width: 100%;
   background: none;
   :focus {
     outline: none;
@@ -72,7 +73,7 @@ const SelectContainer = styled.div`
 
   svg {
     position: absolute;
-    right: 0;
+    right: 10px;
     transform: rotate(180deg);
   }
 `;
@@ -89,7 +90,6 @@ const Input = ({label, name, ...rest}) => {
 const Select = ({ children, value, name, onChange, className }) => (
   <SelectContainer className={className}>
     <Caret
-      fill={colors.blue}
       stroke={colors.blue}
       width="10px"
       height="100%"

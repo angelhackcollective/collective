@@ -124,7 +124,7 @@ class MedicalHistory extends Component {
           value={abortions}
           onChange={this.handleChange}
         />
-        <Button type="submit">Submit</Button>
+        <Button type="submit">Save and Continue</Button>
       </Form>
       </FormWrapper>
     );
