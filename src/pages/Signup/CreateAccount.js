@@ -1,9 +1,9 @@
 /* eslint-disable react/forbid-prop-types */
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { withRouter } from "react-router-dom";
 import { Input } from '../../styledComponents/Inputs';
 import Button from '../../styledComponents/Button';
-import { Form, FormWrapper } from './styles';
+import { Form, FormWrapper, CreateAccountHeader } from './styles';
 import axios from "axios";
 
 class CreateAccount extends Component {
@@ -68,6 +68,11 @@ class CreateAccount extends Component {
   render() {
     const { username, password, passwordConf } = this.state;
     return (
+      <Fragment>
+      <CreateAccountHeader>
+        <h1>Find the right birth control solution for <em>you</em></h1>
+        <p>Reported symptoms are from women— just like you.</p>
+      </CreateAccountHeader>
       <FormWrapper>
       <Form onSubmit={this.handleSubmit}>
         <Input
@@ -95,6 +100,7 @@ class CreateAccount extends Component {
         <Button type="submit">Create Account</Button>
       </Form>
       </FormWrapper>
+      </Fragment>
     );
   }
 }

@@ -10,12 +10,8 @@ import StepLabel from '@material-ui/core/StepLabel';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Section from '../../styledComponents/Section';
-import Container from '../../styledComponents/Container';
+import { CustomContainer } from './styles';
 import styled from 'styled-components';
-
-const CustomContainer = styled(Container)`
-  max-width: 550px;
-`;
 
 const styles = theme => ({
   root: {
@@ -71,19 +67,21 @@ class Signup extends React.Component {
     const steps = getSteps()
     const { classes } = this.props
     return (
-        <Section>
+        <Section dark>
           <CustomContainer>
-            <Stepper activeStep={activeStep}>
-              {steps.map((label, index) => {
-                const props = {};
-                const labelProps = {};
-                return (
-                  <Step key={label} {...props}>
-                    <StepLabel {...labelProps}>{label}</StepLabel>
-                  </Step>
-                );
-              })}
-            </Stepper>
+            { activeStep >= 1 && (
+              <Stepper activeStep={activeStep}>
+                {steps.map((label, index) => {
+                  const props = {};
+                  const labelProps = {};
+                  return (
+                    <Step key={label} {...props}>
+                      <StepLabel {...labelProps}>{label}</StepLabel>
+                    </Step>
+                  );
+                })}
+              </Stepper>
+            )}
             <div>
               {activeStep === steps.length ? (
                 <div>
@@ -91,11 +89,8 @@ class Signup extends React.Component {
                     All steps completed - you&apos;re finished
                   </Typography>
                 </div>
-              ) : (
-                <div>
-                    { React.createElement(ComponentStep, {next: this.handleNext}, null)}
-                </div>
-              )}
+              ) : React.createElement(ComponentStep, {next: this.handleNext}, null)
+              }
             </div>
           </CustomContainer>
       </Section>
