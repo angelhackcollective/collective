@@ -49,7 +49,9 @@ class MedicalHistory extends Component {
         conditions: [e, ...conditions]
       })
     } else {
-      medications.push(e)
+      this.setState({
+        medications: [e, ...medications]
+      })
     }
   }
 
@@ -94,7 +96,7 @@ class MedicalHistory extends Component {
         </div>
         <div>
           <Label>List your current medications</Label>
-          <SelectSearch options={medicationOptions} value="" name="medications" placeholder="Type to search for medications" />
+          <SelectSearch onChange={this.handleSelect} options={medicationOptions} value="" name="medications" placeholder="Type to search for medications" />
           <PillWrapper>
             {
               medications.map(({name}) => (

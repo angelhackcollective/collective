@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 import { colors, media } from './index';
 
-const defaultButtonStyle = inverted => `
+const defaultButtonStyle = color => `
   display: inline-block;
   font-size: 0.875rem;
   font-weight: bold;
   font-family: 'lato';
   color: ${colors.white};
-  background-color: ${props => props.color ? colors[props.color] : colors.blue};
+  background-color: ${color ? colors[color] : colors.blue};
   border-radius: 2px;
   cursor: pointer;
   transition: background-color .5s ease, color .5s ease, box-shadow 0.3s ease 0s;
@@ -24,8 +24,8 @@ const defaultButtonStyle = inverted => `
 
   :hover {
     background-color: ${colors.white};
-    color: ${props => props.color ? colors[props.color] : colors.blue};
-    box-shadow: 0px 0px 0px 2px ${props => props.color ? colors[props.color] : colors.blue};
+    color: ${color ? colors[color] : colors.blue};
+    box-shadow: 0px 0px 0px 2px ${color ? colors[color] : colors.blue};
     transition: background-color .5s ease 0s, color .5s ease 0s, box-shadow 0.3s ease 0s;
   }
   :focus {
@@ -34,7 +34,7 @@ const defaultButtonStyle = inverted => `
 `;
 
 const Button = styled.button`
-  ${props => defaultButtonStyle(props.inverted)}
+  ${props => defaultButtonStyle(props.color)}
 `;
 
 const OutlinedButton = styled(Button)`
