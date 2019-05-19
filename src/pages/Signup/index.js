@@ -7,12 +7,8 @@ import { withStyles } from '@material-ui/core/styles';
 import Stepper from '@material-ui/core/Stepper';
 import Step from '@material-ui/core/Step';
 import StepLabel from '@material-ui/core/StepLabel';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
 import { CustomContainer } from './styles';
-import styled from 'styled-components';
 import { withRouter } from 'react-router-dom';
-import axios from 'axios';
 
 const styles = theme => ({
   root: {
@@ -72,11 +68,11 @@ class Signup extends React.Component {
   }
 
   async signUp() {
-    const { url, patientData } = this.state
-    const res = await axios.post(url, patientData).catch(err => {
-      console.log("ERROR")
-      console.log(err)
-    })
+    const { patientData } = this.state
+    // const res = await axios.post(url, patientData).catch(err => {
+    //   console.log("ERROR")
+    //   console.log(err)
+    // })
     localStorage.setItem("token", patientData.username);
     localStorage.setItem("username", patientData.username);
     this.props.history.push("/")
@@ -86,7 +82,6 @@ class Signup extends React.Component {
     const { activeStep } = this.state
     const ComponentStep = components[activeStep]
     const steps = getSteps()
-    const { classes } = this.props
     return (
       <CustomContainer>
         { activeStep >= 1 && (

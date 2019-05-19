@@ -3,7 +3,6 @@ import { withRouter } from 'react-router-dom';
 import Button from '../../styledComponents/Button';
 import { Input } from '../../styledComponents/Inputs';
 import { CustomContainer, Form, FormWrapper, CreateAccountHeader, SubText } from './styles';
-import axios from 'axios';
 
 class Login extends Component {
   constructor(props) {

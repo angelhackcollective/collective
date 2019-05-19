@@ -1,6 +1,6 @@
 /* eslint-disable react/forbid-prop-types */
 import React, { Component } from "react";
-import { Input, Select, Label } from '../../styledComponents/Inputs';
+import { Select, Label } from '../../styledComponents/Inputs';
 import Button from '../../styledComponents/Button';
 import { Form, Header, HeaderWrapper, FormWrapper } from './styles';
 
@@ -53,7 +53,6 @@ class LifeStyle extends Component {
   }
 
   render() {
-    const { smoker, sexuallyActive, drugs, alcohol } = this.state;
     return (
       <FormWrapper>
         <HeaderWrapper>

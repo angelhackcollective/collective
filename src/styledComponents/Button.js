@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colors, media } from './index';
+import { colors } from './index';
 
 const defaultButtonStyle = color => `
   display: inline-block;
