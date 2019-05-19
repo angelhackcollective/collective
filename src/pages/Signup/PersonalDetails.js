@@ -65,7 +65,7 @@ class PersonalDetails extends Component {
               ))}
             </Select>
           </div>
-          <Button type="submit">Submit</Button>
+          <Button type="submit">Save and Continue</Button>
         </Form>
       </FormWrapper>
     );
