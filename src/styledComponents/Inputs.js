@@ -13,6 +13,8 @@ const defaultInputStyles = () => `
   box-shadow: none;
   cursor: pointer;
   width: 100%;
+  margin-bottom: 20px;
+  padding-left: 1rem;
 
   :focus {
     outline: none;

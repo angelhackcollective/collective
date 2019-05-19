@@ -50,7 +50,7 @@ class Signup extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeStep: 2,
+      activeStep: 0,
       patientData: {},
     };
     this.handleNext = this.handleNext.bind(this);

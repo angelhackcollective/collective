@@ -12,6 +12,7 @@ class CreateAccount extends Component {
     this.state = {
       username: "",
       password: "",
+      passwordConf: "",
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -29,8 +30,7 @@ class CreateAccount extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const { username, password } = this.state;
-    const { history } = this.props;
+    const { username, password, passwordConf } = this.state;
     // username and password validation
     // if (!username) {
     //   alert("Username cannot be blank");
@@ -81,12 +81,18 @@ class CreateAccount extends Component {
         <Input
           type="password"
           name="password"
-          label="Password"
-          placeholder="Password"
+          label="Create Password"
           value={password}
           onChange={this.handleChange}
         />
-        <Button type="submit">Submit</Button>
+        <Input
+          type="password"
+          name="passwordConf"
+          label="Re-Enter Password"
+          value={passwordConf}
+          onChange={this.handleChange}
+        />
+        <Button type="submit">Create Account</Button>
       </Form>
       </FormWrapper>
     );
