@@ -10,7 +10,8 @@ const data = [
     'mood changes', 
     'changes to eyesight for those using contact lenses', 
     'breast tenderness', 
-    'nausea' ]
+    'nausea' ],
+    efficacy: "91-94%"
   }, 
   {
   name: 'Aranelle', 
@@ -23,7 +24,8 @@ const data = [
     'intermenstrual spotting', 
     'changes to eyesight for those using contact lenses', 
     'Melasma (dark pigmentation on the face) which may persist', 
-    'Reduced tolerance to carbohydrates (insulin resistance)' ]
+    'Reduced tolerance to carbohydrates (insulin resistance)' ],
+    efficacy: "99%"
   }, 
   {
     name: 'Aranelle', 
@@ -37,7 +39,8 @@ const data = [
       'Change in corneal curvature (steepening)', 
       'intermenstrual spotting', 
       'missed periods'
-    ]
+    ],
+    efficacy: "72-82%"
   }, 
   {
     name: 'Aranelle', 
@@ -51,7 +54,8 @@ const data = [
       'changes to eyesight for those using contact lenses', 
       'Melasma (dark pigmentation on the face) which may persist', 
       'Vaginal candidiasis'
-    ]
+    ],
+    efficacy: "91-94%"
   }, 
   {
     name: 'Caziant', 
@@ -65,7 +69,8 @@ const data = [
       'Vaginal candidiasis', 
       'weight gain', 
       'Abdominal cramps and bloating'
-    ]
+    ],
+    efficacy: "99%"
   }
 ];
 
