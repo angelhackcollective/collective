@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import Symptoms from '../../components/Symptoms';
-import Button from '../../styledComponents/Button';
+import Button, { OutlinedButton } from '../../styledComponents/Button';
 import { SimilarLarge } from '../../styledComponents/Similar';
 import { HeadWrapper } from '../../styledComponents/Header';
 import SymptomsModal from '../../components/Symptoms/SymptomsModal';
 import { Link } from 'react-router-dom';
-import { Card } from './styles';
+import { Card, Percent, SideEffects, Experiences } from './styles';
 
 const MedicationView = ({history}) => {
   const [modalOpen, toggleModal] = useState(false);
@@ -42,6 +42,46 @@ const MedicationView = ({history}) => {
           </div>
         </div>
         <SimilarLarge />
+        <div className="summaryRow">
+          <div className="your-summary">
+            <h2 className="section-title">Your Summary</h2>
+            <p>Similar women reported 46% less negative side effects (reported 5 or more) than all reported women .</p>
+          </div>
+          <div className="graph">
+            <h2 className="section-title">REPORTED 5+ NEG. SIDE EFFECTS</h2>
+            <Percent percent="20%">
+              <p>20% of Women similar to you</p>
+              <div className="line">
+                <div className="bg">&nbsp;</div>
+              </div>
+            </Percent>
+            <Percent percent="66%">
+              <p>66% from All Women</p>
+              <div className="line">
+                <div className="bg">&nbsp;</div>
+              </div>
+            </Percent>
+          </div>
+        </div>
+        <SideEffects>
+          <h2 className="section-title">Commonly Reported Side Effects:</h2>
+          <div className="sideEffects">
+            {
+              medication.symptoms.map((item,i) => (
+                <p key={i} className="side_effect">{item}, </p>
+              ))
+            }
+          </div>
+        </SideEffects>
+        <Experiences>
+          <div className="header">
+            <h2 className="section-title">Commonly Reported Side Effects:</h2>
+            <div className="sortContainer">
+              <p>Sort by:</p>
+              <OutlinedButton>All Women</OutlinedButton>
+            </div>
+          </div>
+        </Experiences>
         <Symptoms
           {...medication}
         />
