@@ -1,9 +1,7 @@
 /* eslint-disable react/forbid-prop-types */
 import React, { Component } from "react";
-import { withRouter } from "react-router-dom";
-import axios from "axios";
 
-class Signup extends Component {
+class LifeStyle extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -27,40 +25,7 @@ class Signup extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const { username, password, passwordConf } = this.state;
-    const { history } = this.props;
-    // username and password validation
-    if (!username) {
-      alert("Username cannot be blank");
-      return;
-    }
-
-    if (password.length < 8) {
-      alert("Password must be at least 8 characters");
-      return;
-    }
-
-    if (password !== passwordConf) {
-      alert("passwords do not match");
-      return;
-    }
-
-    // const res = await axios.post("/api/auth/register", { username, password });
-    try {
-      // eslint-disable-next-line no-undef
-      localStorage.setItem("token", username);
-      localStorage.setItem("username", username);
-
-      this.setState({
-        username: "",
-        password: "",
-        passwordConf: "",
-      });
-
-      history.push("/");
-    } catch (err) {
-      console.error(err);
-    }
+    this.props.next()
   }
 
   render() {
@@ -94,4 +59,4 @@ class Signup extends Component {
   }
 }
 
-export default withRouter(Signup);
+export default LifeStyle;
