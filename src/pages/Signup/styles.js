@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Container from '../../styledComponents/Container';
 import { colors } from '../../styledComponents';
+
 const CustomContainer = styled(Container)`
   max-width: 550px;
   padding: 35px 0 75px;
