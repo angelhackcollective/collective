@@ -4,15 +4,13 @@ import { PillWrapper as Wrapper } from './Pill';
 import { colors } from './index';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const SmallWrapper = styled(Wrapper)`
-  width: 150px;
+const defaultStyles = (color) => `
   display: flex;
   color: ${colors.logoRed};
 
   p {
     color: ${colors.logoRed};
     margin: 0;
-    font-size: 12px;
     font-weight: bold;
   }
 
@@ -23,6 +21,20 @@ const SmallWrapper = styled(Wrapper)`
   }
 `;
 
+const SmallWrapper = styled(Wrapper)`
+  ${() => defaultStyles()}
+  width: 150px;
+  p {
+    font-size: 12px;
+  }
+`;
+
+const LargeWrapper = styled(Wrapper)`
+  ${props => defaultStyles(props.color)}
+  width: 186px;
+
+`
+
 const SimilarSmall = () => (
   <SmallWrapper color="lightPink">
     <FontAwesomeIcon icon="heart" />
@@ -31,12 +43,13 @@ const SimilarSmall = () => (
 );
 
 const SimilarLarge = () => (
-  <SmallWrapper color="lightPink">
+  <LargeWrapper color="lightPink">
     <FontAwesomeIcon icon="heart" />
     <p>Similar women like this</p>
-  </SmallWrapper>
+  </LargeWrapper>
 )
 
 export {
   SimilarSmall,
+  SimilarLarge,
 };
