@@ -6,16 +6,54 @@ import SymptomsModal from '../../components/Symptoms/SymptomsModal';
 import Button from '../../styledComponents/Button';
 import { HeadWrapper } from '../../styledComponents/Header';
 import styled from 'styled-components';
+import { filter } from 'rsvp';
+import medData from '../../components/Medications/data'
 
 // TODO GET MEDICATIONS
 const BrowseList = () => {
   const [modalOpen, toggleModal] = useState(false);
   const [filters, setFilters] = useState([]);
   const [medications, setMedications] = useState(data)
-  console.log(data)
+  const [filteredMedications, filteredMeds] = useState(medications)
 
   const updateFilters = (filters) => {
-    console.log("SETTING MEDICATION FILTERS", filters)
+
+    let filtersObject = {}
+    filtersObject = filters.reduce((accumulator, filter) => {
+      if (filter === "Low" || filter === "Medium" || filter === "High") {
+        if (!accumulator.effort) {
+          accumulator['effort'] = []
+        }
+        accumulator['effort'].push(filter)
+      }
+
+      if (filter === "99%" || filter === "91-94%" || filter === "72-82%") {
+        if (!accumulator.efficacy) {
+          accumulator['efficacy'] = []
+        }
+        accumulator['efficacy'].push(filter)
+      }
+
+      return accumulator
+    }, {})
+
+    let medicationsFiltered = []
+    medicationsFiltered = medData.reduce((accumulator, med) => {
+      if (filtersObject.effort && filtersObject.effort.includes(med.efforts)) {
+        accumulator.push(med) 
+      }
+
+      if (filtersObject.efficacy && filtersObject.efficacy.includes(med.efficacy)) {
+        accumulator.push(med)
+      }
+
+      return accumulator
+    }, [])
+    console.log("FILTERED MEDS FIN", medicationsFiltered)
+    if (!filteredMedications.length) {
+      setMedications(data)
+    }
+    setMedications(medicationsFiltered)
   }
 
   return (
