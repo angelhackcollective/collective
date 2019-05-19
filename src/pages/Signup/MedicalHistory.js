@@ -49,7 +49,9 @@ class MedicalHistory extends Component {
         conditions: [e, ...conditions]
       })
     } else {
-      medications.push(e)
+      this.setState({
+        medications: [e, ...medications]
+      })
     }
   }
 
