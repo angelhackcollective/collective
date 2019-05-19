@@ -49,7 +49,7 @@ class Signup extends React.Component {
     this.state = {
       activeStep: 0,
       patientData: {},
-      api: "https://hackathon-the-collective.herokuapp.com/api/v1/signup"
+      api: "https://hackathon-the-collective.herokuapp.com/api/v1/user"
     };
     this.handleNext = this.handleNext.bind(this);
     this.signUp = this.signUp.bind(this);
@@ -77,7 +77,7 @@ class Signup extends React.Component {
       console.log("ERROR")
       console.log(err)
     })
-    console.log(res)
+    console.log(res.data)
     localStorage.setItem("token", patientData.username);
     localStorage.setItem("username", patientData.username);
     this.props.history.push("/")

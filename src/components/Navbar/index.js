@@ -34,16 +34,16 @@ class Navbar extends Component {
         <div>
           {localStorage.token ? (
             <li className="navbar-links">
-              <button type="button" onClick={this.logout}>
+              <button style={{color: "#fff"}}type="button" onClick={this.logout}>
                 Logout
               </button>
             </li>
           ) : (
             <LinkContainer>
                 { location.pathname === "/login" ? (
-                  <Link to="/signup">Sign Up</Link>
+                  <Link color="white" to="/signup">Sign Up</Link>
                 ) : (
-                  <Link to="/login">Login</Link>
+                  <Link color="white" to="/login">Login</Link>
                 )}
             </LinkContainer>
           )}
