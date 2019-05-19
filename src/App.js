@@ -7,6 +7,7 @@ import Navbar from './components/Navbar';
 import AuthRoute from './components/AuthRoute';
 import Section from './styledComponents/Section';
 import Container from './styledComponents/Container';
+import ResultsPage from './pages/ResultsPage';
 import { Header } from './styledComponents/Header';
 import { NavContainer } from './styledComponents/NavContainer';
 
@@ -23,6 +24,7 @@ function App() {
           </Switch>
         </Container>
       </Section>
+      <ResultsPage />
     </Fragment>
   );
 }
