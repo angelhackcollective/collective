@@ -7,7 +7,8 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import { FilterStyles } from '../styledComponents/Card';
+import { FilterStyles, CardContainer, MyCardContent, FilterTitles, GraphContent } from '../styledComponents/Card';
+import { green } from '@material-ui/core/colors';
 
 const items = [ { name: 'Allesse', 
 type: 'Extended Cycle', 
@@ -67,19 +68,14 @@ symptoms:  
 
   
   const styles = {
-    card: {
-      minWidth: 275,
-    },
-    bullet: {
-      display: 'inline-block',
-      margin: '0 2px',
-      transform: 'scale(0.8)',
-    },
     title: {
-      fontSize: 14,
+      color: '#979797',
+      borderRight: "solid 1px #fafafa",
+      paddingRight: "5px"
     },
-    pos: {
-      marginBottom: 12,
+    answer: {
+      color: 'black',
+      width: "70%",
     },
   };
   
@@ -87,38 +83,46 @@ symptoms:  
     const { classes } = props;
     return items.map(info => {
       return (
-        <Card className={classes.card}>
-          <CardContent>
-            <Typography variant="h5" component="h2">
+        <CardContainer>
+          <MyCardContent>
+            <h4>
               {info.name}
-            </Typography>
+            </h4>
             <FilterStyles>
-            <Typography className={classes.pos} color="textSecondary">
-              Type 
+            <Typography classes={{
+              root: classes.title}}>
+              <span className="title_span">TYPE</span> <span>"insert"</span>
             </Typography>
-            <Typography className={classes.pos} color="textSecondary">
-              Pill Type
+            <Typography classes={{
+              root: classes.title}}>
+              <span className="title_span">PILL TYPE</span> <span>{info.type}</span>
             </Typography>
-            <Typography className={classes.pos} color="textSecondary">
-              Effort
+            <Typography classes={{
+              root: classes.title}}>
+              <span className="title_span">EFFORT</span><span>{info.efforts}</span>
             </Typography>
-            <Typography className={classes.pos} color="textSecondary">
-              Efficacy
+            <Typography classes={{
+              root: classes.title}}>
+              <span className="title_span">EFFICACY</span> <span>"insert"</span>
             </Typography>
             </FilterStyles>
-            Commonly reported side effects:
-            <Typography component="p">
+            <p className="side-effects-title">COMMONLY REPORTED SIDE-EFFECTS: </p>
+              <Typography classes={{
+                root: classes.answer}}>
               {
                 info.symptoms.map((s, i) => {
                   return `${s}, `;
                 }
             )}
             </Typography>
-          </CardContent>
-          <CardActions>
-            <Button size="small">Learn More</Button>
-          </CardActions>
-        </Card>
+          </MyCardContent>
+          <GraphContent>
+            similar
+            <div className="similar_bar"></div>
+            all
+            <div className="all_bar"></div>
+          </GraphContent>
+        </CardContainer>
       );
     })
   }

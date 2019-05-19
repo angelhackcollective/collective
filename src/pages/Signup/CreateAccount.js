@@ -4,7 +4,6 @@ import { withRouter } from "react-router-dom";
 import { Input } from '../../styledComponents/Inputs';
 import Button from '../../styledComponents/Button';
 import { Form, FormWrapper, CreateAccountHeader, SubText } from './styles';
-import axios from "axios";
 
 class CreateAccount extends Component {
   constructor(props) {
@@ -29,7 +28,7 @@ class CreateAccount extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const { username, password, passwordConf } = this.state;
+    const { username } = this.state;
     // username and password validation
     // if (!username) {
     //   alert("Username cannot be blank");

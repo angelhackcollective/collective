@@ -1,5 +1,4 @@
-import axios from "axios";
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { NavContainer, Link, LinkContainer } from '../../styledComponents/NavContainer';
 
@@ -32,15 +31,15 @@ class Navbar extends Component {
         </h3>
         <div>
           {localStorage.token ? (
-              <button type="button" onClick={this.logout}>
+              <button style={{color: "#fff"}}type="button" onClick={this.logout}>
                 Logout
               </button>
           ) : (
             <LinkContainer>
                 { location.pathname === "/login" ? (
-                  <Link to="/signup">Sign Up</Link>
+                  <Link color="white" to="/signup">Sign Up</Link>
                 ) : (
-                  <Link to="/login">Login</Link>
+                  <Link color="white" to="/login">Login</Link>
                 )}
             </LinkContainer>
           )}

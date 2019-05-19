@@ -1,6 +1,6 @@
 /* eslint-disable react/forbid-prop-types */
 import React, { Component } from "react";
-import { Input, Select, Label } from '../../styledComponents/Inputs';
+import { Input, Label } from '../../styledComponents/Inputs';
 import Button from '../../styledComponents/Button';
 import { Form, Header, HeaderWrapper, FormWrapper, Pill, PillWrapper } from './styles';
 import SelectSearch from 'react-select-search'
@@ -49,7 +49,9 @@ class MedicalHistory extends Component {
         conditions: [e, ...conditions]
       })
     } else {
-      medications.push(e)
+      this.setState({
+        medications: [e, ...medications]
+      })
     }
   }
 
@@ -94,7 +96,7 @@ class MedicalHistory extends Component {
         </div>
         <div>
           <Label>List your current medications</Label>
-          <SelectSearch options={medicationOptions} value="" name="medications" placeholder="Type to search for medications" />
+          <SelectSearch onChange={this.handleSelect} options={medicationOptions} value="" name="medications" placeholder="Type to search for medications" />
           <PillWrapper>
             {
               medications.map(({name}) => (
