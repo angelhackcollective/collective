@@ -5,12 +5,12 @@ import Signup from './pages/Signup';
 import BrowseList from './pages/BrowseList';
 import Navbar from './components/Navbar';
 import AuthRoute from './components/AuthRoute';
-import { Header } from './styles';
+import { Header } from './styledComponents/Header';
+import { NavContainer } from './styledComponents/NavContainer';
 
 function App() {
   return (
     <Fragment>
-      <Header />
       <Navbar />
       <Switch>
         <AuthRoute exact path="/" component={BrowseList} />

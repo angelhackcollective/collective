@@ -80,13 +80,8 @@ class Login extends Component {
           value={password}
           onChange={this.handleChange}
         />
-<<<<<<< HEAD
-        <button type="submit">Login</button>
-        Don't have an account? <a href="/Signup" >Sign up</a> here
-=======
 
         <Button type="submit">Login</Button>
->>>>>>> ef48a75a41f503e858911f5263df53774579f041
       </form>
     );
   }

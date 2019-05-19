@@ -1,7 +1,8 @@
 import axios from "axios";
 import React, { Component, Fragment } from "react";
 import { NavLink, withRouter } from "react-router-dom";
-import "./navbar.css";
+// import "./navbar.css";
+import { NavContainer } from '../../styledComponents/NavContainer';
 
 class Navbar extends Component {
   constructor(props) {
@@ -26,6 +27,7 @@ class Navbar extends Component {
   render() {
     return (
       <div id="navbar">
+      <NavContainer>
         <h3>
           <NavLink to="/">Home </NavLink>
           {localStorage.username && localStorage.username}
@@ -48,6 +50,7 @@ class Navbar extends Component {
             </Fragment>
           )}
         </ul>
+        </NavContainer>
       </div>
     );
   }
