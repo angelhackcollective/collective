@@ -20,7 +20,6 @@ class CreateAccount extends Component {
 
   handleChange(e) {
     e.preventDefault();
-
     const { value, name } = e.target;
 
     this.setState({
