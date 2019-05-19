@@ -98,7 +98,7 @@ const Select = ({ children, value, name, onChange, className }) => (
   </SelectContainer>
 );
 
-export { Input, Select, TextArea };
+export { Label, Input, Select, TextArea };
 
 
 

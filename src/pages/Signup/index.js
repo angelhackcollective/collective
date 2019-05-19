@@ -32,9 +32,9 @@ const styles = theme => ({
 
 const components = [
   CreateAccount,
-  LifeStyle,
-  MedicalHistory,
   PersonalDetails,
+  MedicalHistory,
+  LifeStyle,
 ]
 
 function getSteps() {
@@ -46,26 +46,23 @@ function getSteps() {
   ]
 }
 
-function getStepContent(step) {
-  return components[step]
-}
-
-
-
 class Signup extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeStep: 0,
+      activeStep: 2,
+      patientData: {},
     };
     this.handleNext = this.handleNext.bind(this);
   }
 
-  handleNext(step) {
+  handleNext(data) {
     const { activeStep } = this.state;
-    this.setState({
-      activeStep: activeStep + 1,
-    })
+    console.log(data)
+    this.setState((state) => ({
+      patientData: {...state.patientData, ...data},
+      activeStep: state.activeStep + 1,
+    }))
   }
 
   render() {

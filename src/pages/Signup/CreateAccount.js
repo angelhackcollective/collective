@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { Input } from '../../styledComponents/Inputs';
 import Button from '../../styledComponents/Button';
-import { Form } from './styles';
+import { Form, FormWrapper } from './styles';
 import axios from "axios";
 
 class CreateAccount extends Component {
@@ -52,13 +52,14 @@ class CreateAccount extends Component {
       // eslint-disable-next-line no-undef
       localStorage.setItem("token", username);
       localStorage.setItem("username", username);
-
-      this.setState({
-        username: "",
-        password: "",
-      });
-
-      this.props.next()
+      const data = {
+        ...this.state
+      }
+      // this.setState({
+      //   username: "",
+      //   password: "",
+      // });
+      this.props.next(data)
     } catch (err) {
       console.error(err);
     }
@@ -67,6 +68,7 @@ class CreateAccount extends Component {
   render() {
     const { username, password, passwordConf } = this.state;
     return (
+      <FormWrapper>
       <Form onSubmit={this.handleSubmit}>
         <Input
           type="text"
@@ -86,6 +88,7 @@ class CreateAccount extends Component {
         />
         <Button type="submit">Submit</Button>
       </Form>
+      </FormWrapper>
     );
   }
 }
