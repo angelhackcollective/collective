@@ -11,6 +11,8 @@ const Wrapper = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
   background-position: unset;
+  filter: opacity(.7);
+
 `;
 
 const DefaultLayout = ({ component: Component, ...rest }) => (

@@ -10,9 +10,7 @@ const NavContainer = styled.div`
   align-items: center;
 
   .navWrapper {
-    max-width: 990px;
     margin: 0 auto;
-    max-width: 990px;
     margin: 0 auto;
     width: 100%;
     display: flex;
